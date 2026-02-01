@@ -44,6 +44,6 @@ class InappSelfUpgrade {
 
   Future<String> getVersion() async {
     final PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    return "${packageInfo.version} (${packageInfo.buildNumber})";
+    return packageInfo.version;
   }
 }
