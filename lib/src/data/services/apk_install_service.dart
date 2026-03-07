@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class ApkInstallService {
@@ -7,7 +8,7 @@ class ApkInstallService {
     try {
       await platform.invokeMethod('installApk', {'filePath': filePath});
     } on PlatformException catch (e) {
-      print("Install Error: ${e.message}");
+      debugPrint("Install Error: ${e.message}");
     }
   }
 }

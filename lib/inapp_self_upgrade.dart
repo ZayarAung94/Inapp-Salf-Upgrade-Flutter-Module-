@@ -46,4 +46,9 @@ class InappSelfUpgrade {
     final PackageInfo packageInfo = await PackageInfo.fromPlatform();
     return packageInfo.version;
   }
+
+  Future<String> getFullVersion() async {
+    final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    return '${packageInfo.version} (${packageInfo.buildNumber})';
+  }
 }
